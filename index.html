@@ -51,14 +51,16 @@
     <p>Risparmia facilmente e senza stress, affidandoti a un sistema che lavora per te in background, garantendoti i migliori vantaggi negli acquisti online, e creando una community dinamica di risparmiatori.</p>
   </section>
   <section id="signup">
-    <h2>Iscriviti subito</h2>
-    <p>Non perdere le migliori offerte! Iscriviti ora e resta aggiornato.</p>
-    <form name="signup" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="signup">
-      <input type="email" name="email" placeholder="La tua email" required>
-      <button type="submit">Iscriviti</button>
-    </form>
-  </section>
+  <h2>Iscriviti subito</h2>
+  <p>Non perdere le migliori offerte! Iscriviti ora e resta aggiornato.</p>
+  <form action="https://formspree.io/f/xpwrabod" method="POST">
+    <input type="hidden" name="_subject" value="Nuova iscrizione da Reclaimr">
+    <!-- Se vuoi inviare anche il nome, aggiungi un altro input qui -->
+    <input type="email" name="email" placeholder="La tua email" required>
+    <button type="submit">Iscriviti</button>
+  </form>
+</section>
+
   <footer>
     <p><a href="/privacy.html">Privacy Policy</a> | <a href="/terms.html">Termini di servizio</a></p>
     <p>info@reclaimr.com</p>
