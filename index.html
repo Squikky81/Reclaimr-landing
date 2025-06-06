@@ -1,51 +1,92 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reclaimr – Risparmia, Guadagna e Recupera Soldi Senza Fatica</title>
-  <meta name="description" content="Reclaimr ti fa risparmiare tempo e denaro con cashback, coupon, rimborso automatico e mercato di offerte esclusive.">
-  <meta property="og:title" content="Reclaimr – Risparmia, Guadagna e Recupera Soldi Senza Fatica">
-  <meta property="og:description" content="La tua app intelligente per cashback, coupon, rimborso automatico e mercato di offerte esclusive.">
+  <meta name="description" content="Reclaimr ti fa risparmiare tempo e denaro con cashback, coupon, rimborso automatico e mercato di offerte esclusive." />
+  <meta property="og:title" content="Reclaimr – Risparmia, Guadagna e Recupera Soldi Senza Fatica" />
+  <meta property="og:description" content="La tua app intelligente per cashback, coupon, rimborso automatico e mercato di offerte esclusive." />
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-X7FVQTHLDH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-X7FVQTHLDH');
-  </script>
-
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- NOTA: ho rimosso lo snippet GA da qui. Lo caricheremo solo dopo il consenso cookie -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
   <style>
-    body { margin:0; font-family:'Open Sans', sans-serif; }
-    header { background:#FF6F00; color:white; text-align:center; padding:50px 20px; }
-    header img { max-width:80px; display:block; margin:0 auto 20px; }
-    header h1 { font-family:'Montserrat', sans-serif; font-size:2.5em; margin:0.2em 0; }
-    header p { font-size:1.1em; margin:0.5em 0; }
-    .cta { display:inline-block; background:#00BFA5; color:white; padding:15px 30px; text-decoration:none; font-size:1.1em; border-radius:5px; }
-    section { padding:40px 20px; max-width:800px; margin:auto; }
-    section h2 { font-family:'Montserrat', sans-serif; color:#333333; font-size:1.8em; margin-bottom:20px; }
-    section ul { list-style:none; padding:0; }
-    section ul li { margin:12px 0; display:flex; align-items:center; }
-    section ul li .fa { color:#00BFA5; margin-right:12px; }
-    #signup form { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:20px; }
-    #signup input[type="email"] { padding:10px; width:70%; max-width:300px; border:1px solid #ccc; border-radius:4px; }
-    #signup button { padding:10px 20px; background:#00BFA5; border:none; color:white; border-radius:5px; font-family:'Montserrat', sans-serif; }
-    footer { background:#333333; color:white; text-align:center; padding:30px 20px; font-size:0.9em; }
-    footer a { color:#00BFA5; text-decoration:none; margin:0 8px; }
+    body { margin: 0; font-family: 'Open Sans', sans-serif; }
+    header { background: #FF6F00; color: white; text-align: center; padding: 50px 20px; }
+    header img { max-width: 80px; display: block; margin: 0 auto 20px; }
+    header h1 { font-family: 'Montserrat', sans-serif; font-size: 2.5em; margin: 0.2em 0; }
+    header p { font-size: 1.1em; margin: 0.5em 0; }
+    .cta { display: inline-block; background: #00BFA5; color: white; padding: 15px 30px; text-decoration: none; font-size: 1.1em; border-radius: 5px; }
+    section { padding: 40px 20px; max-width: 800px; margin: auto; }
+    section h2 { font-family: 'Montserrat', sans-serif; color: #333333; font-size: 1.8em; margin-bottom: 20px; }
+    section ul { list-style: none; padding: 0; }
+    section ul li { margin: 12px 0; display: flex; align-items: center; }
+    section ul li .fa { color: #00BFA5; margin-right: 12px; }
+    #signup form { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px; }
+    #signup input[type="email"] { padding: 10px; width: 70%; max-width: 300px; border: 1px solid #ccc; border-radius: 4px; }
+    #signup button { padding: 10px 20px; background: #00BFA5; border: none; color: white; border-radius: 5px; font-family: 'Montserrat', sans-serif; }
+    footer { background: #333333; color: white; text-align: center; padding: 30px 20px; font-size: 0.9em; }
+    footer a { color: #00BFA5; text-decoration: none; margin: 0 8px; }
   </style>
 </head>
 <body>
+  <!-- BANNER COOKIE CONSENT -->
+  <div
+    id="cookie-banner"
+    style="
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #333;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+      z-index: 9999;
+    "
+  >
+    <span>
+      Questo sito utilizza cookie per migliorare l’esperienza di navigazione e per analisi statistiche (Google Analytics). Continuando a navigare o cliccando “Accetto”, acconsenti all’uso dei cookie.
+    </span>
+    <button
+      id="cookie-accept-btn"
+      style="
+        margin-left: 15px;
+        padding: 8px 16px;
+        background: #00BFA5;
+        border: none;
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+      "
+    >
+      Accetto
+    </button>
+    <a href="/privacy.html#cookies" style="color: #00BFA5; margin-left: 15px; text-decoration: underline;">
+      Maggiori info
+    </a>
+  </div>
+
+  <!-- HEADER PRINCIPALE -->
   <header>
-    <img src="logo.png" alt="Reclaimr Logo">
+    <img src="logo.png" alt="Reclaimr Logo" />
     <h1>Reclaimr – Risparmia, Guadagna e Recupera Soldi Senza Fatica</h1>
-    <p>La tua app intelligente per cashback, coupon, rimborso automatico e mercato di offerte esclusive.</p>
+    <p>
+      La tua app intelligente per cashback, coupon, rimborso automatico e
+      mercato di offerte esclusive.
+    </p>
     <a href="#signup" class="cta">Iscriviti Ora</a>
   </header>
+
+  <!-- SEZIONE “COME FUNZIONA” -->
   <section>
     <h2>Come funziona</h2>
     <ul>
@@ -57,24 +98,92 @@
       <li><i class="fa fa-exchange-alt"></i> Vendi e scambia coupon tra utenti in modo sicuro, trasformando i codici sconto inutilizzati in opportunità di guadagno</li>
     </ul>
   </section>
+
+  <!-- SEZIONE “PERCHÉ SCEGLIERE RECLAIMR” -->
   <section id="why">
     <h2>Perché scegliere Reclaimr?</h2>
-    <p>Risparmia facilmente e senza stress, affidandoti a un sistema che lavora per te in background, garantendoti i migliori vantaggi negli acquisti online, e creando una community dinamica di risparmiatori.</p>
+    <p>
+      Risparmia facilmente e senza stress, affidandoti a un sistema che lavora per te in
+      background, garantendoti i migliori vantaggi negli acquisti online, e creando una
+      community dinamica di risparmiatori.
+    </p>
   </section>
+
+  <!-- SEZIONE “ISCRIVITI” -->
   <section id="signup">
     <h2>Iscriviti subito</h2>
     <p>Non perdere le migliori offerte! Iscriviti ora e resta aggiornato.</p>
     <form action="https://formspree.io/f/xpwrabod" method="POST">
-      <input type="hidden" name="_subject" value="Nuova iscrizione da Reclaimr">
-      <input type="hidden" name="_next" value="https://reclaimr.live/thankyou.html">
-      <input type="email" name="email" placeholder="La tua email" required>
+      <input type="hidden" name="_subject" value="Nuova iscrizione da Reclaimr" />
+      <input type="hidden" name="_next" value="https://reclaimr.live/thankyou.html" />
+      <input type="email" name="email" placeholder="La tua email" required />
       <button type="submit">Iscriviti</button>
     </form>
   </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p><a href="/privacy.html">Privacy Policy</a> | <a href="/terms.html">Termini di servizio</a></p>
+    <p>
+      <a href="/privacy.html">Privacy Policy</a> |
+      <a href="/terms.html">Termini di servizio</a>
+    </p>
     <p>info@reclaimr.com</p>
     <p>Reclaimr è un progetto indipendente per aiutarti a risparmiare e guadagnare online.</p>
   </footer>
+
+  <!-- SCRIPT COOKIE CONSENT + CARICAMENTO DINAMICO DI GA -->
+  <script>
+    (function () {
+      const cookieName = "cookies_accepted";
+      const cookieBanner = document.getElementById("cookie-banner");
+      const acceptBtn = document.getElementById("cookie-accept-btn");
+
+      function getCookie(name) {
+        const value = "; " + document.cookie;
+        const parts = value.split("; " + name + "=");
+        if (parts.length === 2) return parts.pop().split(";").shift();
+      }
+
+      function setCookie(name, value, days) {
+        const expires = new Date(Date.now() + days * 864e5).toUTCString();
+        document.cookie = name + "=" + encodeURIComponent(value) + "; expires=" + expires + "; path=/";
+      }
+
+      // Mostra il banner se l’utente non ha già accettato
+      if (getCookie(cookieName) !== "true") {
+        cookieBanner.style.display = "block";
+      } else {
+        // Se già accettato, carica direttamente Google Analytics
+        loadAnalytics();
+      }
+
+      acceptBtn.addEventListener("click", function () {
+        setCookie(cookieName, "true", 365);
+        cookieBanner.style.display = "none";
+        loadAnalytics();
+      });
+
+      function loadAnalytics() {
+        if (window.gaLoaded) return;
+        window.gaLoaded = true;
+
+        // Carico lo script gtag.js
+        const gaScript1 = document.createElement("script");
+        gaScript1.async = true;
+        gaScript1.src = "https://www.googletagmanager.com/gtag/js?id=G-X7FVQTHLDH";
+        document.head.appendChild(gaScript1);
+
+        // Inizializzo gtag
+        const gaScript2 = document.createElement("script");
+        gaScript2.innerHTML = `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-X7FVQTHLDH');
+        `;
+        document.head.appendChild(gaScript2);
+      }
+    })();
+  </script>
 </body>
 </html>
